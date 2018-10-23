@@ -1,0 +1,18 @@
+﻿#pragma kernel CSMain
+
+struct TextureIndex {
+	float3 iPoint;
+	float2 uv;
+};
+
+Texture2D<float4> Tex;
+RWStructuredBuffer<TextureIndex> Points;
+SamplerState sampler_Tex;
+
+
+[numthreads(32,32,1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+	float4 val = Tex.SampleLevel(sampler_Tex, Points[id.x].uv, 0);
+	Points[id.x].iPoint = float3(Points[id.x].iPoint.x, val.x, Points[id.x].iPoint.z);
+}
