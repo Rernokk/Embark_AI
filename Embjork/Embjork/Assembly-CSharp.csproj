@@ -80,6 +80,8 @@
      <Compile Include="Assets\FastNoise Unity\Voxel Engine\Voxel.cs" />
      <Compile Include="Assets\FastNoise Unity\Voxel Engine\VoxelEngineManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Citizens\BaseGatherer.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Design\ItemEntryData.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Design\RecipeDesigner.cs" />
      <Compile Include="Assets\Scripts\Scripts\Generators\BiomeManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Generators\ChunkManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Generators\ComputeShaderScript.cs" />
@@ -87,9 +89,11 @@
      <Compile Include="Assets\Scripts\Scripts\Managers\CivilizationManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Managers\PathManager.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Managers\RecipeManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Managers\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Managers\StructureManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Managers\WorldManager.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Objects\Item.cs" />
      <Compile Include="Assets\Scripts\Scripts\Pathfinding\PathNode.cs" />
      <Compile Include="Assets\Scripts\Scripts\ResourceNodes\BaseResourceNode.cs" />
      <Compile Include="Assets\Scripts\Scripts\Structures\SmallWarehouse.cs" />
@@ -100,16 +104,16 @@
      <None Include="Assets\Scripts\ComputeShaderS\SimpleComputeShader.compute" />
      <None Include="Assets\FastNoise Unity\Voxel Engine\Visual\Vertex Colored Bumped Diffuse.shader" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>E:/Unity Projects/Embjork/Embjork/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>E:/Unity Projects/Embark/Embjork/Embjork/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/Unity Projects/Embjork/Embjork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/Unity Projects/Embark/Embjork/Embjork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>E:/Unity Projects/Embjork/Embjork/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>E:/Unity Projects/Embark/Embjork/Embjork/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/Unity Projects/Embjork/Embjork/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/Unity Projects/Embark/Embjork/Embjork/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

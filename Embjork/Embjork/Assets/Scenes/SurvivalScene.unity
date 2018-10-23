@@ -315,7 +315,8 @@ Prefab:
       propertyPath: chunkSize
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114662473949763562, guid: f90c247930e3af34ebeefcf2c5db2ec4, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f90c247930e3af34ebeefcf2c5db2ec4, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &942460878

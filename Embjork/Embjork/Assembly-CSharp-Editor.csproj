@@ -59,16 +59,16 @@
      <Compile Include="Assets\FastNoise Unity\Voxel Engine\Editor\TerrainGeneratorEditor.cs" />
      <Compile Include="Assets\FastNoise Unity\Voxel Engine\Editor\TerrainGeneratorSIMDEditor.cs" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>E:/Unity Projects/Embjork/Embjork/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>E:/Unity Projects/Embark/Embjork/Embjork/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/Unity Projects/Embjork/Embjork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/Unity Projects/Embark/Embjork/Embjork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>E:/Unity Projects/Embjork/Embjork/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>E:/Unity Projects/Embark/Embjork/Embjork/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/Unity Projects/Embjork/Embjork/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/Unity Projects/Embark/Embjork/Embjork/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
