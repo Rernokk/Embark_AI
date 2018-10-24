@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Design/CrafterScene.unity
+- path: Assets/Scenes/SurvivalScene.unity
   isLoaded: 1
   isActive: 1

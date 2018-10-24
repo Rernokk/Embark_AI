@@ -87,10 +87,6 @@ public class WorldManager : MonoBehaviour
 
 	void Start()
 	{
-		//filter = GetComponent<MeshFilter>();
-		//myMesh = new Mesh();
-		//GenerateGrid();
-
 		for (int i = 0; i < chunkSize; i++)
 		{
 			for (int j = 0; j < chunkSize; j++)

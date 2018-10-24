@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4620435376874640}
-  - component: {fileID: 114384262772125956}
+  - component: {fileID: 114562200302453578}
   m_Layer: 0
   m_Name: BasicCitizen
   m_TagString: Untagged
@@ -155,7 +155,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114384262772125956
+--- !u!114 &114562200302453578
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,11 +163,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1083169391610542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ffce9bc2ac61c448b0167ce1bd110ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 797b6dd024ac7ed4aadf3f12e55c08b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCount: 0
-  resourceLimit: 5
-  unitSpeed: 16
-  currentResourceType: 0
-  currentState: 0
+  unitSpeed: 12
+  walkTimer: 5

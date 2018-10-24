@@ -4,41 +4,36 @@ using UnityEngine;
 
 enum GatheringState { Approach, Gather, Store };
 
-public class BaseGatherer : MonoBehaviour
+public class BaseGatherer : BaseCitizen
 {
 	#region Variables
 	[SerializeField]
 	int resourceCount = 0, resourceLimit = 10;
 
-	[SerializeField]
-	float unitSpeed = 5f;
 	float resourceCyclesPerSecond = 1f;
 	float resourceTimer = 0f;
 
 	bool hasPickedTarget = false;
 
 	[SerializeField]
-	RESOURCETYPE currentResourceType = RESOURCETYPE.NOTHING;
+	Item currentResourceType = null;
 
 	[SerializeField]
 	GatheringState currentState = GatheringState.Approach;
 
 	BaseResourceNode resourceTarget;
 	WarehouseBase myWarehouse;
-	List<Vector3> currentPath;
 	#endregion
 
 	#region Private Methods
-	protected void Start()
+	protected override void Start()
 	{
 		currentState = GatheringState.Approach;
 		GetResourceTarget();
 		GetWarehouse();
-		currentPath = new List<Vector3>();
-		CivilizationManager.instance.AddCitizen(this);
 	}
 
-	protected void Update()
+	protected override void Update()
 	{
 		//Navigate Towards Target until in range.
 		if (currentState == GatheringState.Approach)
@@ -74,9 +69,9 @@ public class BaseGatherer : MonoBehaviour
 	protected void GatherResource(){
 		if (resourceTimer >= 1.0f / resourceCyclesPerSecond)
 		{
-			if (currentResourceType == RESOURCETYPE.NOTHING)
+			if (currentResourceType == null)
 			{
-				currentResourceType = resourceTarget.myResourceType;
+				currentResourceType = resourceTarget.ResourceItem;
 			}
 			resourceTimer -= 1.0f / resourceCyclesPerSecond;
 			resourceCount++;
@@ -176,7 +171,7 @@ public class BaseGatherer : MonoBehaviour
 				if (myWarehouse.StoreResource(currentResourceType, resourceCount))
 				{
 					resourceCount = 0;
-					currentResourceType = RESOURCETYPE.NOTHING;
+					currentResourceType = null;
 					currentState = GatheringState.Approach;
 					hasPickedTarget = false;
 				}

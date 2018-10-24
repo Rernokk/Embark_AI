@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathManager : MonoBehaviour {
-	
+public class PathManager : MonoBehaviour
+{
+
 	public static PathManager instance;
 	PathNode[,] worldGrid;
 
@@ -13,27 +14,41 @@ public class PathManager : MonoBehaviour {
 	bool worldReady = false;
 
 	#region Properties
-	public PathNode[,] WorldGrid {
-		get {
+	public PathNode[,] WorldGrid
+	{
+		get
+		{
 			return worldGrid;
 		}
 	}
-	public bool WorldIsReady {
-		get{
+	public bool WorldIsReady
+	{
+		get
+		{
 			return worldReady;
 		}
 	}
 	#endregion
 
 	#region Public Methods
+	public void BlockNode(Vector3 position)
+	{
+		worldGrid[Mathf.FloorToInt(position.x), Mathf.FloorToInt(position.z)].activeNode = false;
+	}
 
-	public float GetPointHeight(Vector3 position){
-		if (worldReady){
+	public float GetPointHeight(Vector3 position)
+	{
+		if (worldReady)
+		{
 			return worldGrid[Mathf.FloorToInt(position.x), Mathf.FloorToInt(position.z)].transform.position.y;
-		} else {
+		}
+		else
+		{
 			worldReady = true;
-			foreach (PathNode n in WorldGrid){
-				if (!n.isReady){
+			foreach (PathNode n in WorldGrid)
+			{
+				if (!n.isReady)
+				{
 					worldReady = false;
 					break;
 				}
@@ -44,42 +59,48 @@ public class PathManager : MonoBehaviour {
 
 	public List<Vector3> RunPathfinder(Vector3 startPos, Vector3 endPos)
 	{
-		PathNode startNode = worldGrid[(int)startPos.x, (int)startPos.z];
-		PathNode endNode = worldGrid[(int)endPos.x, (int)endPos.z];
-
+		PathNode startNode = worldGrid[Mathf.Max((int)startPos.x, 0), Mathf.Max((int)startPos.z, 0)];
+		PathNode endNode = worldGrid[Mathf.Max((int)endPos.x, 0), Mathf.Max((int)endPos.z, 0)];
 		List<Vector3> genPath = new List<Vector3>();
 		List<PathNode> queued = new List<PathNode>();
-		foreach (PathNode n in worldGrid)
+
+		if (endNode.activeNode)
 		{
-			n.ResetNode();
-		}
-		queued.Add(startNode);
-		PathNode currentNode = null;
-		while (queued.Count > 0)
-		{
-			queued.Sort((q1, q2) => Vector3.Distance(q1.transform.position, endNode.transform.position).CompareTo(Vector3.Distance(q2.transform.position, endNode.transform.position)));
-			currentNode = queued[0];
-			queued.RemoveAt(0);
-			foreach (PathNode n in currentNode.neighbors)
+			foreach (PathNode n in worldGrid)
 			{
-				if (n == endNode)
+				n.ResetNode();
+			}
+			queued.Add(startNode);
+			PathNode currentNode = null;
+			while (queued.Count > 0)
+			{
+				queued.Sort((q1, q2) => Vector3.Distance(q1.transform.position, endNode.transform.position).CompareTo(Vector3.Distance(q2.transform.position, endNode.transform.position)));
+				currentNode = queued[0];
+				queued.RemoveAt(0);
+				foreach (PathNode n in currentNode.neighbors)
 				{
-					startNode.previous = null;
-					n.previous = currentNode;
-					currentNode = n;
-					while (currentNode.previous != null)
+					if (n == endNode)
 					{
-						genPath.Add(currentNode.transform.position);
-						currentNode = currentNode.previous;
+						startNode.previous = null;
+						n.previous = currentNode;
+						currentNode = n;
+						while (currentNode.previous != null)
+						{
+							genPath.Add(currentNode.transform.position);
+							currentNode = currentNode.previous;
+						}
+						genPath.Reverse();
+						return genPath;
 					}
-					genPath.Reverse();
-					return genPath;
-				}
-				else if (!n.visited)
-				{
-					n.visited = true;
-					n.previous = currentNode;
-					queued.Add(n);
+					else if (!n.visited)
+					{
+						n.visited = true;
+						n.previous = currentNode;
+						if (n.activeNode)
+						{
+							queued.Add(n);
+						}
+					}
 				}
 			}
 		}
@@ -88,7 +109,8 @@ public class PathManager : MonoBehaviour {
 	#endregion
 
 	#region Private Methods
-	void Awake() {
+	void Awake()
+	{
 		if (instance != null && instance != this)
 		{
 			Destroy(this);
@@ -99,22 +121,26 @@ public class PathManager : MonoBehaviour {
 		}
 	}
 
-	void Start() {
+	void Start()
+	{
 		int worldSize = WorldManager.instance.WorldSize;
 		worldGrid = new PathNode[worldSize, worldSize];
 		Transform worldNodeHost = new GameObject("WorldNodeHost").transform;
 		for (int i = 0; i < worldSize; i++)
 		{
-			for (int j = 0; j < worldSize; j++){
+			for (int j = 0; j < worldSize; j++)
+			{
 				worldGrid[i, j] = Instantiate(pathNodePrefab, new Vector3(i, -10, j), Quaternion.identity).GetComponent<PathNode>();
 				worldGrid[i, j].transform.parent = worldNodeHost;
 			}
 		}
 	}
 
-	void Update(){
-		if (worldReady == false){ 
-		worldReady = true;
+	void Update()
+	{
+		if (worldReady == false)
+		{
+			worldReady = true;
 			foreach (PathNode n in WorldGrid)
 			{
 				if (!n.isReady)

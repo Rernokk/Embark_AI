@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114789922445620734}
   - component: {fileID: 114133302126837952}
   - component: {fileID: 114779647026261244}
+  - component: {fileID: 114997604699277620}
   m_Layer: 0
   m_Name: ManagerCollection
   m_TagString: Managers
@@ -42,7 +43,6 @@ GameObject:
   - component: {fileID: 114653036849844040}
   - component: {fileID: 33742759681878850}
   - component: {fileID: 23903566319701854}
-  - component: {fileID: 114662473949763562}
   m_Layer: 0
   m_Name: WorldManager
   m_TagString: Untagged
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicCitizen: {fileID: 1083169391610542, guid: 22dbd4b0c1b59e041abc49b367a6af24,
     type: 2}
-  citizenLimit: 100
+  citizenLimit: 15
 --- !u!114 &114653036849844040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,27 +170,8 @@ MonoBehaviour:
   size: 64
   magnitude: 2
   perlin: {fileID: 2800000, guid: 81a866e732ff99f469ab6a0da5ecf675, type: 3}
-  chunkSize: 3
+  chunkSize: 2
   mat: {fileID: 2100000, guid: 5ab56a911f35b1d428f6b4f4347eaa74, type: 2}
---- !u!114 &114662473949763562
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1872834909612860}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64d2ea85d45e7447b0ddbba66906553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: 32
-  chunkSize: 3
-  mat: {fileID: 2100000, guid: 5ab56a911f35b1d428f6b4f4347eaa74, type: 2}
-  magnitude: 10
-  perlin: {fileID: 2800000, guid: 81a866e732ff99f469ab6a0da5ecf675, type: 3}
-  simplex: {fileID: 0}
-  whorrley: {fileID: 0}
-  voronoi: {fileID: 0}
 --- !u!114 &114779647026261244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,3 +196,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33baa15a75aeae4c9ace04acf66cef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114997604699277620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1671736645264172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d96e6dd702c7a4a9fefd4cede03e91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCount: 0

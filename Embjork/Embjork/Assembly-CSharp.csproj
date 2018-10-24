@@ -79,6 +79,8 @@
      <Compile Include="Assets\FastNoise Unity\Voxel Engine\Util\Vector3i.cs" />
      <Compile Include="Assets\FastNoise Unity\Voxel Engine\Voxel.cs" />
      <Compile Include="Assets\FastNoise Unity\Voxel Engine\VoxelEngineManager.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Camera\CitizenTracking.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Citizens\BaseCitizen.cs" />
      <Compile Include="Assets\Scripts\Scripts\Citizens\BaseGatherer.cs" />
      <Compile Include="Assets\Scripts\Scripts\Design\ItemEntryData.cs" />
      <Compile Include="Assets\Scripts\Scripts\Design\RecipeDesigner.cs" />
@@ -96,8 +98,12 @@
      <Compile Include="Assets\Scripts\Scripts\Objects\Item.cs" />
      <Compile Include="Assets\Scripts\Scripts\Pathfinding\PathNode.cs" />
      <Compile Include="Assets\Scripts\Scripts\ResourceNodes\BaseResourceNode.cs" />
-     <Compile Include="Assets\Scripts\Scripts\Structures\SmallWarehouse.cs" />
-     <Compile Include="Assets\Scripts\Scripts\Structures\WarehouseBase.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Structures\StructureBase.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Structures\TownCenter.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Structures\Warehouses\SmallWarehouse.cs" />
+     <Compile Include="Assets\Scripts\Scripts\Structures\Warehouses\WarehouseBase.cs" />
+     <Compile Include="Assets\Scripts\Scripts\UI\CitizenDataTracker.cs" />
+     <Compile Include="Assets\Scripts\Scripts\UI\PlayerInterface.cs" />
      <None Include="Assets\FastNoise Unity\Voxel Engine\Visual\Vertex Colored Diffuse.shader" />
      <None Include="Assets\FastNoise Unity\Voxel Engine\Visual\Vertex Colored.shader" />
      <None Include="Assets\Scripts\Shaders\FlatSurfaceShader.shader" />

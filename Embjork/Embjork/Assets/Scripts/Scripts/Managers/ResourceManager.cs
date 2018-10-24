@@ -21,12 +21,12 @@ public class ResourceManager : MonoBehaviour {
 	#region Public Methods
 	public void AddResourceNode(BaseResourceNode node)
 	{
-		if (!resourceNodes.ContainsKey(node.myResourceType))
+		if (!resourceNodes.ContainsKey(node.MyResourceType))
 		{
-			resourceNodes.Add(node.myResourceType, new List<BaseResourceNode>());
+			resourceNodes.Add(node.MyResourceType, new List<BaseResourceNode>());
 		} else {
-			if (!resourceNodes[node.myResourceType].Contains(node))
-				resourceNodes[node.myResourceType].Add(node);
+			if (!resourceNodes[node.MyResourceType].Contains(node))
+				resourceNodes[node.MyResourceType].Add(node);
 		}
 	}
 
